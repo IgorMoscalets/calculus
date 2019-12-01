@@ -1,22 +1,72 @@
-.App {
+.App{
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #555;
+}
+.pricechart{  
+  float: right;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+.labelchart{
+  font-size: 10px;
+  word-spacing: 12px;
+  margin-top: -12px;
+  margin-left: -3px;
+  display: block;
+}
+.recharts-wrapper{
+  margin: 0 auto;
+}
+.calc{
+  overflow: hidden;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.compar{
+  table-layout: fixed;
+  float: left;
+  width: 50%;
+}
+h2{
+  font-size: 3.5vh;
+  font-weight: 600;
+}
+h3{
+  font-size: 2.5vh;
+  font-weight: 600;
+  color: #999;
+}
+.compar td{
+  padding: 10px;
+  font-size: 13px;
+  user-select: none;
+}
+.compar td:nth-child(2){
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
+.compar td span{
+  min-width: 15px;
+  display: inline-block;
+  text-align: center;
+  font-weight: 800;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.compar tr:nth-child(1) td span{
+  min-width: 50px;
 }
-
-.App-link {
-  color: #09d3ac;
+.compar td b{
+  font-size: 16px;
+  font-weight: 800;
+  color: rgb(147, 110, 193);
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.compar td b:hover{
+  cursor: pointer;
+  color: rgb(147,110,220);
+}
+.compar td b:active{
+  color: rgba(147,119,240,0.9);
 }
