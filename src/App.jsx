@@ -3,6 +3,7 @@ import './App.css';
 import { BarChart, Bar } from 'recharts';
 
 const examerPrices = [3290, 5590, 7490, 8390];
+const Floor = x => Math.floor(x);
 
 class App extends React.Component {
 
@@ -20,8 +21,11 @@ class App extends React.Component {
     this.incrementLessonCount = this.incrementLessonCount.bind(this);
     this.decrementSubjectCount = this.decrementSubjectCount.bind(this);
     this.incrementSubjectCount = this.incrementSubjectCount.bind(this);
+    this.doRound = this.doRound.bind(this);
   };
-
+  doRound(x){
+    return Math.round(x);
+  }
   decrementLessonPrice (){
     if(this.state.lessonPrice > 300){
     this.setState({
@@ -118,7 +122,7 @@ class App extends React.Component {
       <span className="labelchart">Репетитор Экзамер</span>
       </div>
       </div>
-      <h2>Экзамер в <b>11 раз дешевле</b> занятий с репетитором и сэкономит тебе <b> {(this.state.egeWeeks*this.state.lessonPrice*this.state.subjectCount*this.state.lessonCount)-examerPrices[this.state.subjectCount - 1]} рублей</b></h2>
+      <h2>Экзамер в <b>{this.doRound((this.state.egeWeeks*this.state.lessonPrice*this.state.subjectCount*this.state.lessonCount)/examerPrices[this.state.subjectCount - 1])} раз дешевле</b> занятий с репетитором и сэкономит тебе <b> {(this.state.egeWeeks*this.state.lessonPrice*this.state.subjectCount*this.state.lessonCount)-examerPrices[this.state.subjectCount - 1]} рублей</b></h2>
       <h3>Совмещай Экзамер и занятия с репетитором для максимальной эффективности</h3>
     </div>
   );
