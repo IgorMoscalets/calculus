@@ -3,7 +3,6 @@ import './App.css';
 import { BarChart, Bar } from 'recharts';
 
 const examerPrices = [3290, 5590, 7490, 8390];
-const Floor = x => Math.floor(x);
 
 class App extends React.Component {
 
@@ -26,42 +25,42 @@ class App extends React.Component {
   doRound(x){
     return Math.round(x);
   }
-  decrementLessonPrice (){
+  decrementLessonPrice(){
     if(this.state.lessonPrice > 300){
     this.setState({
       lessonPrice: this.state.lessonPrice - 50
     });
     }
   }
-  incrementLessonPrice (){
+  incrementLessonPrice(){
     if(this.state.lessonPrice < 2500){
     this.setState({
       lessonPrice: this.state.lessonPrice + 50
     });
     }
   }
-  decrementLessonCount (){
+  decrementLessonCount(){
     if(this.state.lessonCount > 1){
     this.setState({
       lessonCount: this.state.lessonCount - 1
     });
     }
   }
-  incrementLessonCount (){
+  incrementLessonCount(){
     if(this.state.lessonCount < 4){
     this.setState({
       lessonCount: this.state.lessonCount + 1
     });
     }
   }
-  decrementSubjectCount (){
+  decrementSubjectCount(){
     if(this.state.subjectCount > 1){
     this.setState({
       subjectCount: this.state.subjectCount - 1
     });
     }
   }
-  incrementSubjectCount (){
+  incrementSubjectCount(){
     if(this.state.subjectCount < 4){
     this.setState({
       subjectCount: this.state.subjectCount + 1
@@ -70,7 +69,6 @@ class App extends React.Component {
   }
   render (){
   return (
-
     <div className="App">
       <h2 className="title">
       Давай сравним с репетитором:
